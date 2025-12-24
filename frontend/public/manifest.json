@@ -1,0 +1,24 @@
+{
+    "name":"LeetCode Video Helper",
+    "description":"A simple extension that helps user to find the video related to that particular question on leetcode.",
+    "version":"0.0.1",
+    "manifest_version":3,
+    "action":{
+        "default_popup":"index.html",
+        "default_title":"LeetCode Video Helper"
+    },
+    "background":{
+        "service_worker":"background.js"
+    },
+    "content_scripts":[
+        {
+            "matches":[
+                "https://leetcode.com/problems/*"
+            ],
+            "js":[
+                "content.js"
+            ]
+        }
+    ],
+    "permissions":["activeTab","scripting"]
+}
